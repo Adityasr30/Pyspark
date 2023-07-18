@@ -1,7 +1,7 @@
 What is Pyspark?
 --> Analytical processing engine
 --> Parallel processing (multiple nodes)
---> Powerful data processing and machine learning applications
+--> Powerful data processing and machine learning applicationss
 --> Processing large data
 
 Who uses pyspark?
