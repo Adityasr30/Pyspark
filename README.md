@@ -4,8 +4,6 @@
 - Powerful data processing and machine learning applications
  Processing large data
 
-
-
 ## Who uses pyspark?
 Data science and machine learning community
 
@@ -57,8 +55,8 @@ Spark brings data into the memory (Ram). As we know it takes less time to fetch 
     - In other words, it filters out data before processing.
     - It tries to keep filtering conditions (conditions in WHERE clause) close to the data.
     - Advantage:
-	- It allows parquet to skip reading rows or columns that do not satisfy the filter conditions
-	- Thus, improving query performance by reduction the amount of data that needs to be read from disk.
+	 1. It allows parquet to skip reading rows or columns that do not satisfy the filter conditions
+	 2. Thus, improving query performance by reduction the amount of data that needs to be read from disk.
 - Not suitable for smaller data.
 
 ## What is column pruning?
@@ -128,6 +126,7 @@ A job can mean a set of instructions/code (transformations) written in python/sc
 - Real time data processing
 
 ## Explain spark architecture.
+![alt text](https://sparkbyexamples.com/wp-content/uploads/2020/02/spark-cluster-overview.png?ezimgfmt=ng:webp/ngcb1)
 - Master-slave architecture
 - Master - driver, slave - workers
 - Spark context is the entry point to spark application
@@ -178,10 +177,10 @@ A job can mean a set of instructions/code (transformations) written in python/sc
 - The reliable system can be: s3, hdfs etc. 
 - Checkpointing incurs additional I/O overhead and storage requirements, so it should be used judiciously and selectively for RDDs or DataFrames that are expensive to recompute or have long lineages.
 - Enable checkpointing: 
-  (1) sparkContext.setCheckpointDir()
-  (2) spark.conf.set("spark.sql.streaming.checkpointLocation","<checkpoint_directory>")
-  (3) checkpointing on RDDs: RDD.checkpoint()
-  (4) checkpointing on dataframes: DataFrame.writeStream().option("checkpointLocation","<checkpoint_directory>").start()
+  1. sparkContext.setCheckpointDir()
+  2. spark.conf.set("spark.sql.streaming.checkpointLocation","<checkpoint_directory>")
+  3. checkpointing on RDDs: RDD.checkpoint()
+  4. checkpointing on dataframes: DataFrame.writeStream().option("checkpointLocation","<checkpoint_directory>").start()
 
 ## What is the difference between DAG and lineage?
 - DAG is a logical execution plan that represents the sequence of transformations and actions in a spark application
@@ -192,32 +191,32 @@ A job can mean a set of instructions/code (transformations) written in python/sc
 - Each stage contains some set of tasks.
 - Generally, stages are divided where there is shuffling of data.
 - Example:
-   (1) Adding data --> stage 1
-   (2) Collecting data --> stage 2
+   1. Adding data --> stage 1
+   2. Collecting data --> stage 2
 - Spark Architecture
-   (1) Driver
-   (2) Worker nodes
-   (3) Each worker nodes have executors or slots
-   (4) A worker node can have multiple executors
-   (5) A slot is nothing but a CPU.
-   (6) Each of the component runs on a separate JVM.
+   1. Driver
+   2. Worker nodes
+   3. Each worker nodes have executors or slots
+   4. A worker node can have multiple executors
+   5. A slot is nothing but a CPU.
+   6. Each of the component runs on a separate JVM.
 - A job represents a high-level unit of work triggered by an action operation.
 - A job is divided into stages based on data dependencies and presence of shuffle operations.
 - Stages are composed of tasks that can be executed in parallel, either without shuffling (narrow stages) or with data shuffling (wide stages).
 
 ## List challenges in spark.
-(1) Spill
+1. **Spill**
     - Spill occurs when data requires more memory than available and when the data exceeds memory, it gets spill on to the disk.
     - Performance is reduced because I/O operations on disk are slower.
-(2) Shuffle
+2. **Shuffle**
     - Redistributing data across partitions during groupBy, reduceByKey, join.
     - Shuffle includes transfer of data over the network which can be a performance bottleneck.
-(3) Storage
+3. **Storage**
     - Poor storage management can lead to excessive memory usage, spilling to disk, or inefficient utilization of storage resources.
-(4) Serilization
+4. **Serilization**
     - Process of converting data into suitable format for storage or transmission.
     - Serialization can improve performance, memory usage, and network transfer efficiency.
-(5) Skew
+5. **Skew**
     - Refers to the imbalanced distribution across the partitions.
     - Occurs during aggregations or joins
     - Can impact performance
@@ -228,21 +227,21 @@ A job can mean a set of instructions/code (transformations) written in python/sc
     - Using techniques like caching, checkpointing etc.
 
 ## List some of the important spark configurations.
-(1) Spark driver and executor memory:
+1. Spark driver and executor memory:
     - spark.driver.memory and spark.executor.memory
     - Ensure sufficient memory to execute spark jobs.
-(2) Number of executors and executor cores:
+2. Number of executors and executor cores:
     - spark.executor.instances
     - spark.executor.cores
-(3) Spark driver and executor memory overhead:
+3. Spark driver and executor memory overhead:
     - spark.driver.memoryOverhead and spark.executor.memoryOverhead
-(4) Spark task parallelism:
+4. Spark task parallelism:
     - spark.default.parallelism, spark.sql.shuffle.partitions and spark.sql.files.maxPartitionBytes
-(5) Spark caching and storage levels:
+5. Spark caching and storage levels:
     - spark.storage.memoryFraction, spark.storage.level
-(6) Serialization:
+6. Serialization:
     - spark.serializer
-(7) Resource Management:
+7. Resource Management:
     - spark.dynamicAllocation.enabled, spark.shuffle.service.enabled
 
 ## Difference between repartition and coalesce.
@@ -251,10 +250,10 @@ A job can mean a set of instructions/code (transformations) written in python/sc
 - Coalescing can only decrease the number of partitions, minimizes data movement.
 
 ## How the number of partitions are decided in spark?
-(1) Input data source
-(2) Default parallelism: spark.default.parallelism
-(3) Transformation operations: repartition and coalesce
-(4) Custom partitioning: partitionBy
+1. Input data source
+2. Default parallelism: spark.default.parallelism
+3. Transformation operations: repartition and coalesce
+4. Custom partitioning: partitionBy
 
 ## How many partitions?
 - Default properties:
