@@ -1,4 +1,4 @@
-# Pyspark
+# Pyspark Notes
 ## What is Pyspark?
 - Analytical processing engine
 - Parallel processing (multiple nodes)
