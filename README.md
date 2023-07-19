@@ -296,3 +296,30 @@ Dynamic pruning is an optimization technique used in query processing to selecti
 
 ## What is adaptive query execution?
 Adaptive Query Execution (AQE) is a feature introduced in Apache Spark 3.0 to optimize query execution dynamically based on runtime feedback and data statistics. AQE aims to improve the performance and resource utilization of Spark applications by adapting the execution plan and making data-driven decisions during query processing. 
+
+## Difference between client mode and cluster mode.
+- Client mode runs the Spark driver program on the machine from which the application is submitted, allowing direct interaction and debugging.
+- Cluster mode runs the Spark driver program on one of the cluster's worker nodes, managed by the cluster manager, making it suitable for production deployments.
+- The choice between client mode and cluster mode depends on the use case, development needs, and the production environment. For development and debugging, client mode is preferred, while for production use, cluster mode is the standard deployment choice.
+- 
+## Explain the command: spark-shell --deploy-mode client --master yarn --conf spark.dynamicAllocation.enabled=false --conf spark.sql.adaptive.enabled=false --executor-memory=32g --executor-cores=7 --driver-memory=16g --num-executors=2
+
+1. spark-shell: This command launches the Spark interactive shell, allowing you to interactively execute Spark code and SQL queries.
+
+2. --deploy-mode client: Specifies the deployment mode as "client". In client mode, the Spark driver program runs on the machine where the spark-shell command is executed.
+
+3. --master yarn: Specifies the cluster manager as "yarn". This indicates that Spark will run on a YARN cluster, and YARN will manage the resources and execution of Spark applications.
+
+4. --conf spark.dynamicAllocation.enabled=false: Sets the configuration property spark.dynamicAllocation.enabled to false. This disables dynamic allocation, meaning the number of executors remains fixed throughout the application's lifecycle.
+
+5. --conf spark.sql.adaptive.enabled=false: Sets the configuration property spark.sql.adaptive.enabled to false. This disables adaptive query execution, preventing Spark from dynamically adjusting the execution plan based on runtime statistics and feedback.
+
+6. --executor-memory=32g: Sets the memory per executor to 32 gigabytes (GB). Each executor will have 32GB of memory available for executing tasks.
+
+7. --executor-cores=7: Sets the number of CPU cores per executor to 7. Each executor will be allocated 7 CPU cores for parallel processing.
+
+8. --driver-memory=16g: Sets the memory for the Spark driver program to 16 gigabytes (GB). The driver program runs on the machine where the spark-shell command is executed.
+
+9. --num-executors=2: Specifies the total number of executors to be used in the Spark application. In this case, the application will use 2 executors.
+
+Overall, the command launches the Spark interactive shell in client mode, connecting to a YARN cluster manager with specific configurations. It sets the memory and CPU core allocation for the executors and the driver program, disables dynamic allocation and adaptive query execution, and specifies 2 executors to be used for the application. The Spark shell will be able to interactively run Spark code and SQL queries using the specified resources and configurations.
