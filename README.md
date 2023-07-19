@@ -81,8 +81,8 @@ A job can mean a set of instructions/code (transformations) written in python/sc
 - Also used to schedule jobs
 - Moniters health and status of the cluster, detects failures of nodes.
 - Reschedules tasks if failed.
-- Example: Mesos, kuberneted, Yarn
---> Apache Spark also has a standalone cluster manager
+- Example: Mesos, kubernetes, Yarn
+- Apache Spark also has a standalone cluster manager
 
 ## How spark provides fault tolerance?
 - By storing lineage, Spark can reconstruct lost data partitions by recomputing partitions.
