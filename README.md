@@ -57,7 +57,7 @@ Spark brings data into the memory (Ram). As we know it takes less time to fetch 
     - It tries to keep filtering conditions (conditions in WHERE clause) close to the data.
     - Advantage:
 	 1. It allows parquet to skip reading rows or columns that do not satisfy the filter conditions
-	 2. Thus, improving query performance by reduction the amount of data that needs to be read from disk.
+	 2. Thus, improving query performance by reducing the amount of data that needs to be read from disk.
 - Not suitable for smaller data.
 
 ## What is column pruning?
