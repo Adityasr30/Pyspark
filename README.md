@@ -323,3 +323,9 @@ Adaptive Query Execution (AQE) is a feature introduced in Apache Spark 3.0 to op
 9. --num-executors=2: Specifies the total number of executors to be used in the Spark application. In this case, the application will use 2 executors.
 
 Overall, the command launches the Spark interactive shell in client mode, connecting to a YARN cluster manager with specific configurations. It sets the memory and CPU core allocation for the executors and the driver program, disables dynamic allocation and adaptive query execution, and specifies 2 executors to be used for the application. The Spark shell will be able to interactively run Spark code and SQL queries using the specified resources and configurations.
+
+## What are some of the difficulties when working with csv files?
+
+- No defined schema
+- Nested data requires special handling 
+- Encoding format limited
