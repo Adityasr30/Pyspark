@@ -3,7 +3,7 @@
 - Analytical processing engine
 - Parallel processing (multiple nodes)
 - Powerful data processing and machine learning applications
- Processing large data
+- Python + spark = PySpark
 
 ## Who uses pyspark?
 Data science and machine learning community
