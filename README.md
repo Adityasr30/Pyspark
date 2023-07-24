@@ -329,3 +329,25 @@ Overall, the command launches the Spark interactive shell in client mode, connec
 - No defined schema
 - Nested data requires special handling 
 - Encoding format limited
+
+## What is Avro and ORC?
+
+**Avro**:
+Avro is another open-source data serialization system developed by the Apache Avro project. It is both a data format and a remote procedure call (RPC) framework used for data exchange between systems. Avro is designed to be language-neutral, compact, and fast, making it suitable for big data processing and communication across different programming languages and systems.
+Key features of Avro include:
+
+- Data serialization: Avro provides a compact binary data format for efficient data serialization and deserialization.
+- Schema evolution: Like Parquet, Avro also supports schema evolution, allowing data schema changes without breaking backward compatibility.
+- Dynamic typing: Avro supports dynamic typing, making it easy to work with dynamically changing data.
+- Schema resolution: It provides robust schema resolution to handle schema mismatches during data exchange.
+
+**ORC (Optimized Row Columnar)**:
+ORC is a columnar storage format developed by the Apache ORC project. It was specifically designed to improve the performance of data processing in the Hadoop ecosystem, particularly for the Apache Hive data warehouse system. ORC aims to provide better compression and speed for read-heavy workloads and analytical queries.
+Key features of ORC include:
+
+- Lightweight compression: ORC uses lightweight compression algorithms, such as Zlib and Snappy, to achieve high compression ratios without sacrificing query performance.
+- Predicate pushdown: ORC supports predicate pushdown, a technique that can significantly reduce the amount of data read during query execution.
+- Type support: Similar to Parquet, ORC supports a wide range of data types, including nested data structures and complex types.
+- Lightweight indexes: ORC supports lightweight indexes, which help accelerate the process of finding relevant data during query execution.
+
+In summary, each of these formats has its own set of strengths, and the choice between Parquet, Avro, and ORC will depend on factors like the specific use case, data size, query patterns, and the tools or frameworks you are using in your big data processing pipeline.
