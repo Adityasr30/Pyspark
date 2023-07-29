@@ -301,7 +301,7 @@ Adaptive Query Execution (AQE) is a feature introduced in Apache Spark 3.0 to op
 - Client mode runs the Spark driver program on the machine from which the application is submitted, allowing direct interaction and debugging.
 - Cluster mode runs the Spark driver program on one of the cluster's worker nodes, managed by the cluster manager, making it suitable for production deployments.
 - The choice between client mode and cluster mode depends on the use case, development needs, and the production environment. For development and debugging, client mode is preferred, while for production use, cluster mode is the standard deployment choice.
-- 
+
 ## Explain the command: spark-shell --deploy-mode client --master yarn --conf spark.dynamicAllocation.enabled=false --conf spark.sql.adaptive.enabled=false --executor-memory=32g --executor-cores=7 --driver-memory=16g --num-executors=2
 
 1. spark-shell: This command launches the Spark interactive shell, allowing you to interactively execute Spark code and SQL queries.
