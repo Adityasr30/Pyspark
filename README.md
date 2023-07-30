@@ -68,7 +68,7 @@ Spark brings data into the memory (Ram). As we know it takes less time to fetch 
 ## What is meant by distributed processing?
 - Spark jobs are executed in a cluster
 - This cluster contains combination of many machines
-- The job is divided into chunks and each of them is executed on sperate machines
+- The job is divided into chunks and each of them is executed on seperate machines
 - This kind of processing is called as distributed processing.
 
 ## What is a job?
