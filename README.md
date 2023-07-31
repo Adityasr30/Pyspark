@@ -48,7 +48,7 @@ Spark brings data into the memory (Ram). As we know it takes less time to fetch 
 - Columnar data structure: values of each column are stored together
 - Compression: it support compression algorithms like gzip, snappy and LZO.
 - Schema evolution:
-    - Parquet supports schema evaluation
+    - Parquet supports schema evolution
     - If the schema of data evolves over time, we do not require to process the data again, it adapts to the schema.
 - Predicate pushdown:
     - Parquet supports predicate pushdown
