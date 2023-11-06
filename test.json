@@ -3,5 +3,6 @@
   "dbname": "adw_Aditya.Rambhad",
   "username": "Aditya.Rambhad",
   "password": "AR@info@1001$%",
+  "schemaname": "dbo",
   "tablename": "CopyProduct"
 }
