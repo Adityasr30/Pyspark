@@ -1,3 +1,3 @@
 {
-  "connectionString": "integrated security=False;data source=BOOTCAMP-DB\\INFOBOOTCAMPDB;initial catalog=adw_Aditya.Rambhad;user id=Aditya.Rambhad"
+  "connectionString": "integrated security=False;data source=BOOTCAMP-DB\\INFOBOOTCAMPDB;initial catalog=adw_Aditya_Rambhad;user id=Aditya.Rambhad"
 }
